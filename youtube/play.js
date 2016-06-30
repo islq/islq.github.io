@@ -21,6 +21,7 @@ function onYouTubeIframeAPIReady(videoId)
 		height: window_height,
 		width: window_width,
 		videoId: videoList[focus_position][0],
+		autohide:1,
 		events: 
 		{
 			'onReady': onPlayerReady,
