@@ -300,11 +300,13 @@ function playkeydown(keyCode)
 			break;
 			//vol
 			case 175:
+			case 39:
 			{
 				upVolume();
 			}
 			break;
 			case 174:
+			case 37:
 			{
 				downVolume();
 			}
