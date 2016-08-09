@@ -46,7 +46,8 @@ function inputDeal(text)
 	
 	var option = 
 	{
-		q:keyWord
+		q:keyWord,
+		regionCode:"CZ"
 	}
 	var param = getSearchParam(option);
 	
