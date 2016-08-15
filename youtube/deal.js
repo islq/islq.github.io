@@ -416,6 +416,7 @@ function textWrap(ctx,text,maxWidth,maxR)
 				else
 				{
 					text_arr[r] = text_r+" ...";
+					console.log('out' + Date.now());
 					return text_arr;
 				}
 			}
