@@ -3,7 +3,7 @@
 //video list
 function drawList()
 {
-	console.log('in');
+	console.log('in' + Date.now());
 	clearScreen();
 	
 	ctx.drawImage(ns_bkhead,0,0);
@@ -320,13 +320,13 @@ function drawList()
 			}
 		}
 	}
-	console.log('out');
+	console.log('out' + Date.now());
 }
 
 //video info
 function drawInfo()
 {
-	console.log('in');
+	console.log('in' + Date.now());
 	var top_title = top_up-8;
 	var space_vv1 = 25;
 	var space_vv2 = 28;
@@ -370,12 +370,13 @@ function drawInfo()
 	ctx.font = "17px Arial";
 	ctx.fillStyle = "#ddd";
 	ctx.fillText(videoList[focus_position][4],left_time,top_content+42);
-	console.log('out');
+	console.log('out' + Date.now());
 }
 
 //content new line ,please set the ctx's font
 function textWrap(ctx,text,maxWidth,maxR)
 {
+	console.log('in' + Date.now());
 	//console.log(text);
 	var text_arr = new Array();
 	var text_word = "";
@@ -454,7 +455,7 @@ function textWrap(ctx,text,maxWidth,maxR)
 			
 		}
 	}
-	
+	console.log('out' + Date.now());
 	return text_arr;
 }
 
