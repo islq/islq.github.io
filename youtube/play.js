@@ -21,7 +21,6 @@ function onYouTubeIframeAPIReady(videoId)
 		height: window_height,
 		width: window_width,
 		videoId: videoList[focus_position][0],
-		autohide:1,
 		events: 
 		{
 			'onReady': onPlayerReady,
@@ -301,13 +300,11 @@ function playkeydown(keyCode)
 			break;
 			//vol
 			case 175:
-			case 39:
 			{
 				upVolume();
 			}
 			break;
 			case 174:
-			case 37:
 			{
 				downVolume();
 			}

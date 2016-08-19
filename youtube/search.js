@@ -46,8 +46,9 @@ function inputDeal(text)
 	
 	var option = 
 	{
-		q:keyWord,
-		regionCode:"SK"
+		part:"snippet",
+		location:encodeURI(25,180),
+		locationRadius:"50km"
 	}
 	var param = getSearchParam(option);
 	

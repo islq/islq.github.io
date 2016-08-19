@@ -12,6 +12,25 @@ var ns_process_left = new Image();ns_process_left.src = "pic/ns_process_left.png
 var ns_process_middle = new Image();ns_process_middle.src = "pic/ns_process_middle.png";
 var ns_process_right = new Image();ns_process_right.src = "pic/ns_process_right.png";
 
+var ns_b_l = new Image();ns_b_l.src = "pic/ns_b_l.png";
+var ns_b_m = new Image();ns_b_m.src = "pic/ns_b_m.bmp";
+var ns_b_r = new Image();ns_b_r.src = "pic/ns_b_r.png";
+
+var ns_yellow = new Image();ns_yellow.src = "pic/ns_yellow.bmp";
+var ns_blue = new Image();ns_blue.src = "pic/ns_blue.bmp";
+var ns_green = new Image();ns_green.src = "pic/ns_green.bmp";
+var ns_menu = new Image();ns_menu.src = "pic/ns_menu.png";
+
+var ns_ysetl = new Image();ns_ysetl.src = "pic/ns_ysetl.png";
+var ns_ysetm = new Image();ns_ysetm.src = "pic/ns_ysetm.bmp";
+var ns_ysetr = new Image();ns_ysetr.src = "pic/ns_ysetr.png";
+
+var ns_cbiteml = new Image();ns_cbiteml.src = "pic/ns_cbiteml.png";
+var ns_cbitemm = new Image();ns_cbitemm.src = "pic/ns_cbitemm.bmp";
+var ns_cbitemr = new Image();ns_cbitemr.src = "pic/ns_cbitemr.png";
+
+
+
 var body;
 var canvas;
 var canvas1;
@@ -37,6 +56,8 @@ var isKeyBoardShow = false;
 var current_dialog_object;
 var seek_object = new SeekClass();
 var info_tip_object = new InfoTipClass();
+
+var isSwitchLang = false;
 
 function initData()
 {
@@ -145,6 +166,14 @@ function ok()
 	}
 }
 
+function keySwitchLang()
+{
+	listSelectObject.show(lang_param);
+	isSwitchLang = true;
+}
+
+
+
 function mainkeydown(keyCode)
 {
 	switch(keyCode)
@@ -170,6 +199,7 @@ function mainkeydown(keyCode)
 			rightPage();
 		}
 		break;
+		case 415:
 		case 13:
 		{
 			//console.log("ssssssssssssssssssssslllllllllllll");
@@ -186,8 +216,14 @@ function mainkeydown(keyCode)
 			keySearch();
 		}
 		break;
+		case 407:
+		{
+			keySwitchLang();
+		}
+		break;
 	}
 }
+
 
 function searchkeydown(keyCode)
 {
@@ -203,6 +239,11 @@ function searchkeydown(keyCode)
 	}
 }
 
+function switchkeydown(keyCode)
+{
+	listSelectObject.keydownevent(keyCode);
+}
+
 window.onload = function()
 {
 	initData();
@@ -214,15 +255,22 @@ window.onload = function()
 		
 		if(!isSearch)
 		{
-			
-			if(!isPlay)
+			if(!isSwitchLang)
 			{
-				mainkeydown(oEvent.keyCode);
+				if(!isPlay)
+				{
+					mainkeydown(oEvent.keyCode);
+				}
+				else
+				{
+					playkeydown(oEvent.keyCode);
+				}
 			}
 			else
 			{
-				playkeydown(oEvent.keyCode);
+				switchkeydown(oEvent.keyCode);
 			}
+
 		}
 		else
 		{

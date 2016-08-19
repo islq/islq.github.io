@@ -1,9 +1,9 @@
 // JavaScript Document
 
 //video list
+var lang_param;
 function drawList()
 {
-	console.log('in' + Date.now());
 	clearScreen();
 	
 	ctx.drawImage(ns_bkhead,0,0);
@@ -21,6 +21,9 @@ function drawList()
 	
 	var left_pic = left_split+24;
 	var left_text = left_pic+150;
+
+
+	drawCity();
 	
 	ctx.fillStyle = "white";
 	ctx.textAlign = "left";
@@ -28,16 +31,16 @@ function drawList()
 	//init view
 	ctx.font="18px Arial";
 	
-	ctx.fillText("Key Word: "+keyWord,30,top_up-50);
+	ctx.fillText(lang[lang_index].key+keyWord,30,top_up-90);
 	
 	ctx.font="30px Arial";
 	ctx.textAlign="center";
-	ctx.fillText("Youtube List",window_width/2,top_up-50);
+	ctx.fillText(lang[lang_index].youtube,window_width/2,top_up-50);
 	
 	ctx.font="18px Arial";
 	ctx.textAlign = "left";
-	ctx.fillText("Current Page: "+(results.current_page+1),790,top_up-50);
-	ctx.fillText("Total Results: "+totalResults,1010,top_up-50);
+	ctx.fillText(lang[lang_index].cuge+(results.current_page+1),790,top_up-50);
+	ctx.fillText(lang[lang_index].tots+totalResults,1000,top_up-50);
 	
 	ctx.strokeStyle = "#FFEA62";
 	ctx.lineWidth = 3;
@@ -51,10 +54,38 @@ function drawList()
 	var top_bottom_text = top_bottom + 28;
 	
 	var left_bottom = 36;
+	var left_start = left_bottom+10;
+	var spaceh1 = 10;
+	var spaceh2 = 20;
 	
+	ctx.font = "20px Arial";
+	ctx.fillStyle = "white";
+	ctx.textAlign = "left";
 	
+	ctx.drawImage(ns_b_l,left_bottom,top_bottom);
+	ctx.drawImage(ns_b_m,left_bottom+ns_b_l.width,top_bottom,700,39);
+	ctx.drawImage(ns_b_r,left_bottom+ns_b_l.width+700,top_bottom);
 	
-	ctx.drawImage(ns_navigation,left_bottom,top_bottom);	
+	ctx.drawImage(ns_yellow,left_start,top_bottom_pic);
+	left_start = left_start + ns_yellow.width+spaceh1;
+	ctx.fillText(lang[lang_index].search,left_start,top_bottom_text);
+	left_start = left_start + ctx.measureText(lang[lang_index].search).width+spaceh2;
+
+	ctx.drawImage(ns_green,left_start,top_bottom_pic);
+	left_start = left_start+ns_green.width+spaceh1;
+	ctx.fillText(lang[lang_index].seek,left_start,top_bottom_text);
+	left_start = left_start + ctx.measureText(lang[lang_index].seek).width+spaceh2;
+
+	ctx.drawImage(ns_blue,left_start,top_bottom_pic);
+	left_start = left_start + ns_blue.width+spaceh1;
+	ctx.fillText(lang[lang_index].language,left_start,top_bottom_text);
+	left_start = left_start + ctx.measureText(lang[lang_index].language).width+spaceh2;
+
+	ctx.drawImage(ns_menu,left_start,top_bottom_pic);
+	left_start = left_start + ns_menu.width+spaceh1;
+	ctx.fillText(lang[lang_index].menu,left_start,top_bottom_text);
+	
+		
 	
 	//draw video list
 	
@@ -320,13 +351,58 @@ function drawList()
 			}
 		}
 	}
-	console.log('out' + Date.now());
+}
+
+function drawCity()
+{
+	var left_text = 30;
+	var top_text = 100;
+
+	ctx.font = "20px Arial";
+	ctx.fillStyle = "white";
+	ctx.textAlign = "left";
+
+	ctx.fillText(lang[lang_index].city,left_text,top_text);
+
+	var width_select = 220;
+	var height_select = 26;
+
+	var left_pic = left_text + ctx.measureText(lang[lang_index].city).width+10;
+	var top_pic = top_text-19;
+
+	ctx.drawImage(ns_ysetl,left_pic,top_pic,ns_ysetl.width,height_select);
+	ctx.drawImage(ns_ysetm,left_pic+7,top_pic,width_select,height_select);
+	ctx.drawImage(ns_ysetr,left_pic+7+width_select,top_pic,ns_ysetr.width,height_select);
+
+	ctx.textAlign = "center";
+	ctx.fillStyle = "black";
+	ctx.fillText(lang[lang_index].lang[lang_index],left_pic+width_select/2,top_text);
+
+	lang_param =
+	{
+		left:left_pic+2,
+		top:top_pic+height_select,
+		width:width_select+ns_ysetr.width-2,
+		page_r:5,
+		select_n:lang_index,
+		text:lang[lang_index].lang,
+		fun_ok:function(num)
+		{
+			lang_index = num;
+			drawList();
+			drawInfo();
+			isSwitchLang = false;
+		},
+		fun_menu:function()
+		{
+			isSwitchLang = false;
+		}
+	}
 }
 
 //video info
 function drawInfo()
 {
-	console.log('in' + Date.now());
 	var top_title = top_up-8;
 	var space_vv1 = 25;
 	var space_vv2 = 28;
@@ -370,13 +446,11 @@ function drawInfo()
 	ctx.font = "17px Arial";
 	ctx.fillStyle = "#ddd";
 	ctx.fillText(videoList[focus_position][4],left_time,top_content+42);
-	console.log('out' + Date.now());
 }
 
 //content new line ,please set the ctx's font
 function textWrap(ctx,text,maxWidth,maxR)
 {
-	console.log('in' + Date.now());
 	//console.log(text);
 	var text_arr = new Array();
 	var text_word = "";
@@ -416,7 +490,6 @@ function textWrap(ctx,text,maxWidth,maxR)
 				else
 				{
 					text_arr[r] = text_r+" ...";
-					console.log('out' + Date.now());
 					return text_arr;
 				}
 			}
@@ -456,7 +529,7 @@ function textWrap(ctx,text,maxWidth,maxR)
 			
 		}
 	}
-	console.log('out' + Date.now());
+	
 	return text_arr;
 }
 
