@@ -216,7 +216,7 @@ function mainkeydown(keyCode)
 			keySearch();
 		}
 		break;
-		case 407:
+		case 406:
 		{
 			keySwitchLang();
 		}
