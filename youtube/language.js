@@ -52,14 +52,14 @@ lang_cz =
 	lang:
 		[
 			"Anglicky",
-			"Slovensko",
+			"Slovensky",
 			"Česky"
 		]
 }
 
 
 
-lang_index = 1;
+lang_index = 2;
 
 lang = 
 [
