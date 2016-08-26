@@ -33,7 +33,7 @@ lang_sk =
 		[
 			"Anglicky",
 			"Slovensky",
-			"Česky"
+			"Czech"
 		]
 
 }
@@ -53,7 +53,7 @@ lang_cz =
 		[
 			"Anglicky",
 			"Slovensky",
-			"Česky"
+			"Czech"
 		]
 }
 
