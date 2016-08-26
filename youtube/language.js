@@ -13,8 +13,9 @@ lang_en =
 	menu:"Menu",
 	lang:
 		[
-			"english",
-			"Slovak language",
+			"English",
+			"Slovak",
+			"Czech"
 		]
 }
 lang_sk = 
@@ -23,17 +24,37 @@ lang_sk =
 	key:"Kľúčové Slovo: ",
 	youtube:"Youtube",
 	cuge:"Aktuálna stránka: ",
-	tots:"Konečný výsledok: ",
+	tots:"Celkové výsledky: ",
 	language:"Jazyk",
-	search:"Vyhľadávanie",
+	search:"Vyhľadávaní",
 	seek:"Vyhľadať",
 	menu:"Menu",
 	lang:
 		[
-			"angličtina",
-			"slovenský jazyk",
+			"Anglicky",
+			"Slovensky",
+			"Česky"
 		]
 
+}
+
+lang_cz = 
+{
+	city:"Místo: ",
+	key:"Klíčové slovo: ",
+	youtube:"Youtube",
+	cuge:"Strana: ",
+	tots:"Celkové výsledky: ",
+	language:"Jazyk",
+	search:"Vyhledávání",
+	seek:"Vyhledat",
+	menu:"Menu",
+	lang:
+		[
+			"Anglicky",
+			"Slovensko",
+			"Česky"
+		]
 }
 
 
@@ -43,5 +64,6 @@ lang_index = 1;
 lang = 
 [
 	lang_en,
-	lang_sk
+	lang_sk,
+	lang_cz
 ]
