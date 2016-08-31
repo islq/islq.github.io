@@ -27,7 +27,7 @@ lang_sk =
 	tots:"Celkové výsledky: ",
 	language:"Jazyk",
 	search:"Vyhľadávaní",
-	seek:"Vyhľadať",
+	seek:"Prehrať od",
 	menu:"Menu",
 	lang:
 		[
@@ -47,7 +47,7 @@ lang_cz =
 	tots:"Celkové výsledky: ",
 	language:"Jazyk",
 	search:"Vyhledávání",
-	seek:"Vyhledat",
+	seek:"Prehrať od",
 	menu:"Menu",
 	lang:
 		[
