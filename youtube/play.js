@@ -299,11 +299,13 @@ function playkeydown(keyCode)
 			}
 			break;
 			//vol
+			case 39:
 			case 175:
 			{
 				upVolume();
 			}
 			break;
+			case 37:
 			case 174:
 			{
 				downVolume();
