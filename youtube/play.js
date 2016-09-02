@@ -326,6 +326,7 @@ function playkeydown(keyCode)
 			}
 			break;
 			//play
+			case 415:
 			case 250:
 			{
 				player.playVideo();
