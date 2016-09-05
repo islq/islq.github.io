@@ -209,7 +209,7 @@ function mainkeydown(keyCode)
 		break;
 		case 8:
 		{
-			toMenu();
+			//toMenu();
 		}
 		break;
 		case 405:
