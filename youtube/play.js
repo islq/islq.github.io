@@ -338,6 +338,7 @@ function playkeydown(keyCode)
 			
 			//menu
 			case 8:
+			case 18:
 			{
 				toList();
 				
