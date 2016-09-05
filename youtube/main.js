@@ -90,17 +90,57 @@ function clearScreen()
 
 function upMove()
 {
-	focus_position = (focus_position -1 + 5)%5;
-	drawList();
-	drawInfo();
+	focus_position = focus_position -1 ;
+	
+	if(focus_position<0)
+	{
+		focus_position = 4;
+		if(results.prepage!="")
+		{
+			results.current_page --;
+			var param = getSearchParam({pageToken:results.prepage});
+			search(param);
+		}
+		else
+		{
+			drawList();
+			drawInfo();
+		}
+	}
+	else
+	{
+		drawList();
+		drawInfo();
+	}
 }
+
 
 function downMove()
 {
-	focus_position = (focus_position + 1)%5;
-	drawList();
-	drawInfo();
+	focus_position = focus_position + 1;
+	if(focus_position>=5)
+	{
+		focus_position = 0;
+		if(results.nextpage!="")
+		{
+			results.current_page ++;
+			var param = getSearchParam({pageToken:results.nextpage});
+			search(param);
+		}
+		else
+		{
+			drawList();
+			drawInfo();
+		}
+	}
+	else
+	{
+		drawList();
+		drawInfo();
+	}
+	
 }
+
 
 function toMenu()
 {
