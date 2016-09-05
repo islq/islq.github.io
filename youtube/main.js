@@ -164,6 +164,7 @@ function ok()
 		isFirstPlay = false;
 		playLoader();
 	}
+	ctx.clearRect(0,0,window_width,window_height);
 }
 
 function keySwitchLang()
