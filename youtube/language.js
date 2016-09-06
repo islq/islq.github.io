@@ -26,7 +26,7 @@ lang_sk =
 	cuge:"Aktuálna stránka: ",
 	tots:"Celkové výsledky: ",
 	language:"Jazyk",
-	search:"Vyhľadávaní",
+	search:"Vyhladávanie",
 	seek:"Prehrat od",
 	menu:"Menu",
 	lang:
@@ -59,7 +59,7 @@ lang_cz =
 
 
 
-lang_index = 2;
+lang_index = 1;
 
 lang = 
 [
