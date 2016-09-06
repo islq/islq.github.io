@@ -42,7 +42,7 @@ function openT(left1,top1,deal,content)
       content+="<tr><td><a id=\"focus_gt\" href=\"javascript:void(0)\" tabindex=\"1\">!</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">@</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">#</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">/</a><td><a href=\"javascript:void(0)\" tabindex=\"1\">%</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">&</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\"><</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">></a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">*</a></td><td><a id=\"focus_jh\" href=\"javascript:void(0)\" tabindex=\"1\">+</a></td></tr>";
        content+="<tr><td><a id=\"focus_xh\" href=\"javascript:void(0)\" tabindex=\"1\">_</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">-</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">,</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">~</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">;</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">(</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">)</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">[</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">]</a></td><td><a id=\"focus_wh\" href=\"javascript:void(0)\" tabindex=\"1\">?</a></td></tr></table></div>";
 	   
-	   content+="<table id=\"tab_bottom\"><tr><td colspan=\"2\"><a id=\"delete\" href=\"javascript:void(0)\" tabindex=\"1\"><<-</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\" id=\"caps\">CAPS</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\" id=\"num\">Num</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">Save</a></td><td><a id=\"clear\" href=\"javascript:void(0)\" tabindex=\"1\">Clear</a></td></tr></table></div>";
+	   content+="<table id=\"tab_bottom\"><tr><td colspan=\"2\"><a id=\"delete\" href=\"javascript:void(0)\" tabindex=\"1\"><<-</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\" id=\"caps\">CAPS</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\" id=\"num\">Num</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">Search</a></td><td><a id=\"clear\" href=\"javascript:void(0)\" tabindex=\"1\">Clear</a></td></tr></table></div>";
 	kk.innerHTML = content ;
 	body.appendChild(kk);
 	$("#system_keyboard a:focus").css("outline","none");
@@ -463,7 +463,7 @@ function openT(left1,top1,deal,content)
 						tabId = 3;
 					}
 				}
-				else if(text =="Save")
+				else if(text =="Search")
 				{
 					deal(deleteChar(input_content,_position,1));
 					closeT();
