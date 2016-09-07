@@ -214,10 +214,10 @@ function toList()
 {
 	isPlay = false;
 	player.stopVideo();
-	//$("#player_div").hide();
-	//$("#myCanvas").show();
-	$("#player_div").css("z-index",1);
-	$("#myCanvas").css("z-index",2);
+	$("#player_div").hide();
+	$("#myCanvas").show();
+	//$("#player_div").css("z-index",1);
+	//$("#myCanvas").css("z-index",2);
 	//drawList();
 	//drawInfo();
 }

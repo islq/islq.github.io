@@ -191,10 +191,10 @@ function rightPage()
 function ok()
 {
 	isPlay = true;
-	//$("#player_div").show();
-	//$("#myCanvas").hide();
-	$("#player_div").css("z-index",2);
-	$("#myCanvas").css("z-index",1);
+	$("#player_div").show();
+	$("#myCanvas").hide();
+	//$("#player_div").css("z-index",2);
+	//$("#myCanvas").css("z-index",1);
 	videoLoaing = true;
 	
 	if(isFirstPlay!=true)
