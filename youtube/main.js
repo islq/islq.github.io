@@ -193,8 +193,6 @@ function ok()
 	isPlay = true;
 	$("#player_div").show();
 	$("#myCanvas").hide();
-    $("#myCanvas1").hide();
-    $("#myCanvas2").hide();
 	//$("#player_div").css("z-index",2);
 	//$("#myCanvas").css("z-index",1);
 	videoLoaing = true;
