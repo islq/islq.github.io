@@ -39,8 +39,8 @@ var player_div;
 var ctx;
 var ctx1;
 var ctx2;
-var window_height = 694;
-var window_width = 1240;
+var window_height = 695;//694;
+var window_width = 1242;//1240;
 
 var player;
 var videoList;
