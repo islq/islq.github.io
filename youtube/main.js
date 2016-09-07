@@ -191,8 +191,10 @@ function rightPage()
 function ok()
 {
 	isPlay = true;
-	$("#player_div").css("z-index",2);
-	$("#myCanvas").css("z-index",1);
+	$("#player_div").show();
+	$("#myCanvas").hide();
+	//$("#player_div").css("z-index",2);
+	//$("#myCanvas").css("z-index",1);
 	videoLoaing = true;
 	
 	if(isFirstPlay!=true)
@@ -204,7 +206,7 @@ function ok()
 		isFirstPlay = false;
 		playLoader();
 	}
-	ctx.clearRect(0,0,window_width,window_height);
+	//ctx.clearRect(0,0,window_width,window_height);
 }
 
 function keySwitchLang()
@@ -249,7 +251,7 @@ function mainkeydown(keyCode)
 		break;
 		case 8:
 		{
-			//toMenu();
+			toMenu();
 		}
 		break;
 		case 405:
