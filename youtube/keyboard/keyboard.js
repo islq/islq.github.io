@@ -13,6 +13,7 @@ ns_keyboard_r = new Image();ns_keyboard_r.src ='keyboard/ns_keyboard_r.png';ns_k
 ns_keyboard_d = new Image();ns_keyboard_d.src ='keyboard/ns_keyboard_d.png';ns_keyboard_d.onload = function(){};
 function openT(left1,top1,deal,content)
 {
+	console.log("sssssssssss");
 	tabId = 1;
 	capsId = 1;
 	input_content = content+"|";
@@ -39,10 +40,10 @@ function openT(left1,top1,deal,content)
 	 
 	 //num
 	 content+=" <div id=\"tab3\"><table class=\"tab\" ><tr><td><a id=\"focus_0\" href=\"javascript:void(0)\" tabindex=\"1\">0</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">1</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">2</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">3</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">4</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">5</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">6</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">7</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">8</a></td><td><a id=\"focus_9\" href=\"javascript:void(0)\" tabindex=\"1\">9</a></td></tr>";
-      content+="<tr><td><a id=\"focus_gt\" href=\"javascript:void(0)\" tabindex=\"1\">!</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">@</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">#</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">/</a><td><a href=\"javascript:void(0)\" tabindex=\"1\">%</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">&</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\"><</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">></a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">*</a></td><td><a id=\"focus_jh\" href=\"javascript:void(0)\" tabindex=\"1\">+</a></td></tr>";
+      content+="<tr><td><a id=\"focus_gt\" href=\"javascript:void(0)\" tabindex=\"1\">!</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">@</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">#</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">/</a><td><a href=\"javascript:void(0)\" tabindex=\"1\">%</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\" value = '&'>&</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\" value = '<' ><</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\" value = '>' >></a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">*</a></td><td><a id=\"focus_jh\" href=\"javascript:void(0)\" tabindex=\"1\">+</a></td></tr>";
        content+="<tr><td><a id=\"focus_xh\" href=\"javascript:void(0)\" tabindex=\"1\">_</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">-</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">,</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">~</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">;</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">(</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">)</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">[</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">]</a></td><td><a id=\"focus_wh\" href=\"javascript:void(0)\" tabindex=\"1\">?</a></td></tr></table></div>";
 	   
-	   content+="<table id=\"tab_bottom\"><tr><td colspan=\"2\"><a id=\"delete\" href=\"javascript:void(0)\" tabindex=\"1\"><<-</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\" id=\"caps\">CAPS</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\" id=\"num\">Num</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">Search</a></td><td><a id=\"clear\" href=\"javascript:void(0)\" tabindex=\"1\">Clear</a></td></tr></table></div>";
+	   content+="<table id=\"tab_bottom\"><tr><td colspan=\"2\"><a id=\"delete\" href=\"javascript:void(0)\" tabindex=\"1\"><<-</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\" id=\"caps\">CAPS</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\" id=\"num\">Num</a></td><td><a href=\"javascript:void(0)\" tabindex=\"1\">Go</a></td><td><a id=\"clear\" href=\"javascript:void(0)\" tabindex=\"1\">Clear</a></td></tr></table></div>";
 	kk.innerHTML = content ;
 	body.appendChild(kk);
 	$("#system_keyboard a:focus").css("outline","none");
@@ -320,6 +321,7 @@ function openT(left1,top1,deal,content)
 	
 	$("#system_keyboard #input_content a").keydown(function(e)
 	{
+		console.log("hhhhhhhhh");
 		length_in = input_content.length;
 		if(length_in>1)
 		{
@@ -430,7 +432,11 @@ function openT(left1,top1,deal,content)
 		{	
 			if($(this).attr("id")!="delete" && $(this).attr("id")!="content_a")
 			{
-				var text = 	$(this).html();
+				var text = 	$(this).attr("value");
+				if(typeof(text) == "undefined")
+				{
+					text = $(this).html();
+				}
 				if(text =="CAPS")
 				{
 					if(tabId == 2)
@@ -463,7 +469,7 @@ function openT(left1,top1,deal,content)
 						tabId = 3;
 					}
 				}
-				else if(text =="Search")
+				else if(text =="Go")
 				{
 					deal(deleteChar(input_content,_position,1));
 					closeT();
@@ -525,16 +531,16 @@ function openT(left1,top1,deal,content)
 		{
 			switch(oEvent.keyCode)
 			{
-				case 48:
-				case 49:
-				case 50:
-				case 51:
-				case 52:
-				case 53:
-				case 54:
-				case 55:
-				case 56:
-				case 57:
+				case CHKeyEvent.KEY.CHAR0:
+				case CHKeyEvent.KEY.CHAR1:
+				case CHKeyEvent.KEY.CHAR2:
+				case CHKeyEvent.KEY.CHAR3:
+				case CHKeyEvent.KEY.CHAR4:
+				case CHKeyEvent.KEY.CHAR5:
+				case CHKeyEvent.KEY.CHAR6:
+				case CHKeyEvent.KEY.CHAR7:
+				case CHKeyEvent.KEY.CHAR8:
+				case CHKeyEvent.KEY.CHAR9:
 				{
 					ctx.font = "20px Arial";
 					var width_content = ctx.measureText(input_content).width;
@@ -544,6 +550,12 @@ function openT(left1,top1,deal,content)
 						_position ++;
 					}
 					$("#input_content a").html(input_content);
+				}
+				break;
+				case CHKeyEvent.KEY.GREEN:
+				{
+					deal(deleteChar(input_content,_position,1));
+					closeT();
 				}
 				break;
 			}
