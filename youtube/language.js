@@ -21,7 +21,7 @@ lang_en =
 lang_sk = 
 {
 	city:"Mesto: ",
-	key:"Kľúčové Slovo: ",
+	key:"Klúcové Slovo: ",
 	youtube:"Youtube",
 	cuge:"Aktuálna stránka: ",
 	tots:"Celkové výsledky: ",
