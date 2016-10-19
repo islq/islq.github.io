@@ -362,12 +362,12 @@ function drawCity()
 	ctx.fillStyle = "white";
 	ctx.textAlign = "left";
 
-	ctx.fillText(lang[lang_index].city,left_text,top_text);
+	ctx.fillText(lang[lang_index].language,left_text,top_text);
 
 	var width_select = 220;
 	var height_select = 26;
 
-	var left_pic = left_text + ctx.measureText(lang[lang_index].city).width+10;
+	var left_pic = left_text + ctx.measureText(lang[lang_index].language).width+10;
 	var top_pic = top_text-19;
 
 	ctx.drawImage(ns_ysetl,left_pic,top_pic,ns_ysetl.width,height_select);
