@@ -346,6 +346,12 @@ function playkeydown(keyCode)
 				
 			}
 			break;
+			case 27:
+			{
+				toList();
+				e.preventDefult();
+			}
+			break;
 			
 		}
 	}

@@ -1086,6 +1086,17 @@ function ListSelectClass()
 				this.menu();
 			}
 			break;
+			case 8:
+			{
+				this.menu();
+			}
+			break;
+			case 27:
+			{
+				this.menu();
+				e.preventDefult();
+			}
+			break;
 		}
 	}
 	return this;

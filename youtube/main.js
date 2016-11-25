@@ -279,6 +279,14 @@ function searchkeydown(keyCode)
 			closeT();
 		}
 		break;
+		case 27:
+		{
+			isKeyBoardShow = false;
+			isSearch = false;
+			closeT();
+			e.preventDefult();
+		}
+		break;
 	}
 }
 
