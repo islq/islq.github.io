@@ -448,7 +448,7 @@ function SeekClass()
 			case 27:
 			{
 				this.menu();
-				e.preventDefult();
+				//e.preventDefult();
 			}
 			break;
 			case 48:
